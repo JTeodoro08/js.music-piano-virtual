@@ -1,0 +1,45 @@
+adiciona efeito festivo ao fundo da pagina - linha 4 a 17 - opção1
+
+// Dispara o efeito festivo quando uma tecla é tocada
+    triggerFestiveEffect(); 
+
+// Adiciona a função de efeito festivo
+const triggerFestiveEffect = () => {
+    const body = document.body;
+
+// Adiciona a classe festiva para aplicar animação ao fundo
+    body.classList.add("festive");
+
+// Remove a classe festiva após um tempo para evitar loops contínuos
+    setTimeout(() => {
+        body.classList.remove("festive");
+    }, 500); // Efeito dura 500ms
+};
+
+
+adiciona efeito festivo ao fundo da pagina - linha 20 a 45 - opção2
+// Função para criar efeito de confetes
+const createConfettiEffect = () => {
+    const confettiContainer = document.createElement("div");
+    confettiContainer.classList.add("confetti-container");
+
+    // Gera confetes
+    for (let i = 0; i < 100; i++) {
+        const confetti = document.createElement("div");
+        confetti.classList.add("confetti");
+
+        // Posicionamento e animação aleatórios
+        confetti.style.left = `${Math.random() * 100}vw`;
+        confetti.style.animationDuration = `${Math.random() * 2 + 3}s`;
+        confetti.style.backgroundColor = `hsl(${Math.random() * 360}, 100%, 50%)`;
+
+        confettiContainer.appendChild(confetti);
+    }
+
+    document.body.appendChild(confettiContainer);
+
+    // Remove confetes após 3 segundos
+    setTimeout(() => {
+        confettiContainer.remove();
+    }, 3000);
+};

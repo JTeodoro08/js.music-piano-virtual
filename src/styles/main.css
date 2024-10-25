@@ -1,0 +1,201 @@
+body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background-color: #e3f2fd;
+    color: #fff;
+}
+
+.container{
+    width: 780px;
+    border-radius: 20px;
+    padding: 35px 40px;
+    background-color: black;
+}
+.container header{
+    color: #b2b2b2;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+}
+
+header h2{
+    font-size: 1.6rem;
+
+}
+
+header .column {
+    display: flex;
+    align-items: center;
+}
+
+header .column span {
+    font-weight: 500;
+    margin-right: 15px;
+    font-size: 1.19rem;
+}
+
+.volume-slider input {
+    accent-color: #fff;
+}
+
+.keys-check input {
+    width: 60px;
+    height: 30px;
+    appearance: none;
+    border-radius: 30px;
+    background-color: #4b4b4b;
+    cursor: pointer;
+    position: relative;
+}
+
+.keys-check input::before {
+    content: "";
+    height: 20px;
+    width: 20px;
+    background-color: #8c8c8c;
+    top: 50%;
+    left: 0.3rem;
+    border-radius: inherit;
+    position: absolute;
+    transform: translateY(-50%);
+    transition: all 0.3s ease;
+}
+
+.keys-check input:checked::before {
+    left: 2.1rem;
+    background-color: #fff;
+}
+
+.piano-keys {
+    display: flex;
+    margin-top: 40px;
+}
+
+.piano-keys .key {
+    cursor: pointer;
+    user-select: none;
+    list-style: none;
+    color: #a2a2a2;
+    position: relative;
+    text-transform: uppercase;
+}
+
+.piano-keys .white {
+    width: 70px;
+    height: 230px;
+    border: 1px solid black;
+    border-radius: 8px;
+    background: linear-gradient(#fff 96%, #eee 4%);
+}
+
+.piano-keys .black {
+    width: 44px;
+    height: 140px;
+    z-index: 2;
+    margin: 0 -22px 0 -22px;
+    border: 1px solid black;
+    border-radius: 0 0 5px 5px;
+    background: linear-gradient(#333 96%, #000 4%);
+}
+
+.piano-keys span {
+    position: absolute;
+    bottom: 20px;
+    width: 100%;
+    text-align: center;
+    font-size: 1.13rem;
+}
+
+.piano-keys .white.active {
+    box-shadow: inset -5px 5px 20px 
+    rgba(0, 0, 0, 0.2);
+    background: linear-gradient(to
+    bottom #fff 0%, #eee 100%);
+}
+
+.piano-keys .black.active {
+    box-shadow: inset -5px 5px 10px 
+    rgba(255, 255, 255, 0.1);
+    background: linear-gradient(to
+    bottom #000 , #434343);
+}
+
+.piano-keys .key.hide span {
+    display: none;
+}
+
+/* Efeito de fundo festivo para o corpo da página 
+body.festive {
+    animation: festiveBackground 0.5s ease-in-out;
+}
+
+/* Animação de fundo para o efeito festivo 
+@keyframes festiveBackground {
+    0% { background-color: #ff3399; }
+    25% { background-color: #ffcc00; }
+    50% { background-color: #33ccff; }
+    75% { background-color: #ff9933; }
+    100% { background-color: #ff3399; }
+} */
+
+
+/* Fogos de artifício */
+.fireworks-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    pointer-events: none;
+    z-index: -1;
+}
+
+.firework {
+    position: absolute;
+    bottom: 10%;
+    width: 10px;
+    height: 10px;
+    background-color: #fff;
+    border-radius: 50%;
+    box-shadow: 0px 0px 10px 2px #ffffff;
+    animation: explode 1s linear infinite;
+    opacity: 0;
+}
+
+/* Animação para explosão dos fogos */
+@keyframes explode {
+    0% {
+        transform: translateY(0) scale(1);
+        opacity: 1;
+    }
+    50% {
+        transform: translateY(-200px) scale(1.5);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(-250px) scale(0.2);
+        opacity: 0;
+    }
+}
+
+/* Sobreposição de luzes de réveillon */
+.newyear-lights-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: radial-gradient(circle, rgba(255,255,255,0.1), rgba(0,0,0,0.8));
+    z-index: -1;
+    animation: flash-bg 0.2s linear infinite alternate;
+    pointer-events: none;
+}
+
+/* Animação para luzes piscando */
+@keyframes flash-bg {
+    0%, 100% { opacity: 0.2; }
+    50% { opacity: 0.6; }
+}
